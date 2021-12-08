@@ -2,14 +2,9 @@ import supabase from '../../Client/supabaseClient';
 
 export default function Signup() {
     async function signInWithGithub() {
-        const { user, session, error } = await supabase.auth.signIn(
-            {
-                provider: 'github',
-            },
-            {
-                redirectTo: '/chat',
-            }
-        );
+        const { user, session, error } = await supabase.auth.signIn({
+            provider: 'github',
+        });
 
         if (error) {
             alert('error logging in with github');
