@@ -1,0 +1,55 @@
+/* Css Reset by Josh W Comeau */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+
+/* Font stuff */ 
+* {
+  font-family: Arial;
+}
+
+
+/* Gappers */
+.gap-20 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.gap-30 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* 
+Nice Colorschemes:
+
+1: #FDF5DF #5EBEC4 #F92C85 <--- Used currently for this project
+2: #051622 #1BA098 #DEB992 <--- Possible for night mode
+3: #1F3044 #FB9039 #646C79
+4: #EE7879 #2A3166 #F4ABAA #CAE7DF
+*/

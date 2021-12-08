@@ -1,0 +1,14 @@
+.messaging-layout {
+    background-color: #FDF5DF;
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-areas:
+        "side messages"
+        "side textArea"
+        "side button";
+    grid-template-rows: 1fr 6rem 6rem;
+    grid-template-columns: 15rem 1fr;
+    isolation: isolate;
+    height: 100vh;
+}

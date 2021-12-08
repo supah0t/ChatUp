@@ -1,0 +1,6 @@
+.sidebar {
+  padding: 10px;
+  grid-area: side;
+  border-right: 2px solid tan;
+  margin-top: 5px;
+}
