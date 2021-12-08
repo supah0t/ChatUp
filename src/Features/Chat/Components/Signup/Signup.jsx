@@ -7,7 +7,7 @@ export default function Signup() {
                 provider: 'github',
             },
             {
-                redirectTo: 'http://localhost:3000/chat',
+                redirectTo: '/chat',
             }
         );
 
