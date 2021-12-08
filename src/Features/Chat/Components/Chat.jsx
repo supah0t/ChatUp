@@ -25,7 +25,8 @@ export default function Chat() {
 
     async function SetUpData() {
         fetchMessages();
-        fetchUsers();
+        setUsername(user.email);
+        //fetchUsers();
         supabase
             .from('Messages')
             .on('INSERT', payload => {
@@ -34,13 +35,14 @@ export default function Chat() {
             .subscribe();
     }
 
-    async function fetchUsers() {
-        const { data } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', user.id);
-        setUsername(data[0].username);
-    }
+    //Fetches the username of the current user from database, not necessary now
+    //async function fetchUsers() {
+    //const { data } = await supabase
+    //.from('profiles')
+    //.select('*')
+    //.eq('id', user.id);
+    //setUsername(data[0].username);
+    //}
 
     async function fetchMessages() {
         const { data } = await supabase.from('Messages').select();
@@ -67,10 +69,16 @@ export default function Chat() {
 
     return (
         <div className="messaging-layout">
-            <Sidebar users={['john', 'mark']} currentUser={username} />
-            <ChatArea currentUser={username} messages={splitMessages} />
-            <br />
-            <InputArea />
+            {username !== '' ? (
+                <>
+                    <Sidebar users={['john', 'mark']} currentUser={username} />
+                    <ChatArea currentUser={username} messages={splitMessages} />
+                    <br />
+                    <InputArea />
+                </>
+            ) : (
+                <div />
+            )}
         </div>
     );
 }
